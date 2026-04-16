@@ -979,7 +979,9 @@ body {
     
     .expertise, .projects, .contact, .about, .experience { padding: 4rem 0; }
     .skills-title, .section-title { font-size: 2.2rem; margin-bottom: 1.5rem; }
-    .skill-card { width: 100%; justify-content: center; }
+    .skills-grid { grid-template-columns: repeat(2, 1fr); gap: 0.8rem; }
+    .skill-card { padding: 0.8rem; }
+
     
     /* Contact scaling */
     .contact-grid { grid-template-columns: 1fr; gap: 3rem; margin-top: 1.5rem; text-align: left; }
@@ -988,4 +990,81 @@ body {
     
     .form-row { grid-template-columns: 1fr; gap: 1rem; }
     .btn-submit { width: 100%; justify-content: center; }
+}
+
+/* Footer Styling */
+.main-footer {
+    padding: 2rem 0 4rem;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-bottom {
+    max-width: 1300px;
+    margin: 0 auto;
+    padding: 0 3rem;
+}
+
+.footer-line {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--glass-border), transparent);
+    margin-bottom: 2rem;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.footer-links a {
+    color: var(--text-muted);
+    text-decoration: none;
+    transition: var(--transition);
+}
+
+.footer-links a:hover {
+    color: var(--accent-yellow);
+}
+
+.back-to-top {
+    width: 45px;
+    height: 45px;
+    background: var(--glass-bg);
+    border: 1px solid var(--glass-border);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: var(--transition);
+    color: var(--text-white);
+}
+
+.back-to-top:hover {
+    background: var(--accent-yellow);
+    color: var(--bg-main);
+    transform: translateY(-5px);
+}
+
+@media (max-width: 768px) {
+    .footer-bottom {
+        padding: 0 1.5rem;
+    }
+    .footer-content {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+    }
+    .footer-links {
+        order: -1;
+        gap: 1.5rem;
+    }
 }
